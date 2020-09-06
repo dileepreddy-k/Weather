@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>.::Weather App::.</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+	<link rel="stylesheet" href="./styles/app.css">
+</head>
+<body>
+	<header>
+		<div class="app-container app-flex">
+			<div class="header-left">
+				<h2>Weather</h2>
+			</div>
+			<div class="header-right">
+				<a href="javascript:void(0)">Github</a>
+			</div>
+		</div>
+	</header>
+	<div class="jumbotron">
+        <div class="app-container jumbotron-content">
+			<input type="text" name="place" id="place" placeholder="Type place here..." data-placesearch>
+			<div class="jumbotron-content-box">
+				<h3 class="jumbotron-title" data-name>City name</h3>
+				<h5 class="jumbotron-subtitle" data-status>Weather Condition</h5> 
+				<h1 class="temp"><span data-temperature>Temp</span><sup>&deg;</sup><span data-units>C</span></h1>
+			</div>
+        </div>
+    </div>
+	<footer>
+		<div class="app-container app-flex">
+			<div class="footer-left">
+				<span>© 2019, All rights reserved</span>
+			</div>
+			<div class="footer-right credits">
+				<span>Weather data provided by <a href="https://weatherstack.com/">Weatherstack</a></span>
+			</div>
+		</div>
+	</footer>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>	
+	<script src="https://cdn.jsdelivr.net/npm/places.js@1.19.0"></script>
+	<script src="./scripts/script.js"></script>
+</body>
+</html>
