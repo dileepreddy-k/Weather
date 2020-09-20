@@ -44,13 +44,14 @@ header .app-flex{
 
 .jumbotron{
 	width: 100%;
-	background-color: #d2d2d2;
-	background-image: url('../images/banner.jpg');
-	background-repeat: no-repeat;
-	padding: 80px 20px;
+	background: #d2d2d2 url('../images/banner.jpg') no-repeat center;
+	padding: 0 20px;
     position: relative;
-    background-position: center;
-    background-size: cover;
+	background-size: cover;
+	align-items: center;
+	height: -webkit-calc(100vh - 110px);
+	height: -moz-calc(100vh - 110px);
+	height: calc(100vh - 110px);
 }
 
 .jumbotron::after{
@@ -75,7 +76,8 @@ header .app-flex{
     box-shadow: 0px 0px 40px rgba(0,0,0,0.8);
 	text-align: center;
 	margin: 40px auto;
-    width: 420px;
+	max-width: 420px;
+	width: 100%;
     color: #FFF;
 }
 
@@ -106,7 +108,6 @@ footer{
 	background: #ffffff;
     border-top: 5px solid #f72b2b;
 	padding: 8px 0;
-	margin: 20px 0 0;
 }
 
 footer .app-flex{
@@ -120,4 +121,69 @@ footer .app-flex{
 
 .credits img{
 	width: 240px;
+}
+
+@media only screen and (max-width: 767px) {
+	.jumbotron{
+		padding: 0 10px;
+		height: -webkit-calc(100vh - 130px);
+		height: -moz-calc(100vh - 130px);
+		height: calc(100vh - 130px);
+	}
+	.jumbotron-content{
+		padding: 0;
+	}
+	.jumbotron-content-box{
+		padding: 30px 10px;
+	}
+	footer .app-flex{
+		flex-direction: column;
+	}
+}
+
+.app-loading{
+	display: none;
+	align-items: center;
+	background: rgba(0,0,0,0.2);
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 9;
+	top: 0;
+	left: 0;
+}
+
+.loading .app-loading{
+	display: flex;
+}
+
+.spinner {
+	width: 100px;
+	height: 100px;
+	margin: 0 auto;
+	background-color: #fff;  
+	border-radius: 100%;  
+	-webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+	animation: sk-scaleout 1.0s infinite ease-in-out;
+}
+  
+@-webkit-keyframes sk-scaleout {
+	0% { 
+		-webkit-transform: scale(0) 
+	}
+	100% {
+	  -webkit-transform: scale(1.0);
+	  opacity: 0;
+	}
+}
+  
+@keyframes sk-scaleout {
+	0% { 
+		-webkit-transform: scale(0);
+		transform: scale(0);
+	} 100% {
+		-webkit-transform: scale(1.0);
+		transform: scale(1.0);
+		opacity: 0;
+	}
 }

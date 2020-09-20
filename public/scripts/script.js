@@ -4,6 +4,7 @@
 
 	var app = window.app || new Object();
 
+	var body = document.querySelector('body');
 	var placeSearchHolder = document.querySelector('[data-placesearch]');
 	var name = document.querySelector('[data-name]');
 	var status = document.querySelector('[data-status]');
@@ -28,6 +29,8 @@
 
 	app.fetchWeather = function(query){
 
+		body.classList.add('loading');
+
 		fetch('/current', {
 			method: 'POST',
 			headers: {
@@ -39,11 +42,13 @@
 			})
 		}).then( res => res.json()).then(data => {
 
+			body.classList.remove('loading');
 			if( data.error ){
 				swal("Error!", "We couldn\'t able to find weather for selected city. Please search others", "error");
 			}
-
+			
 			app.setWeather(data);
+			
 		})
 	}
 

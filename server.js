@@ -16,7 +16,6 @@ app.use(express.static('public'));
 
 app.post('/current', (req, res) => {
 	var url = `${WEATHERSTACK_CURRENT_URL}?access_key=${WEATHERSTACK_API_KEY}&query=${req.body.query}`;
-	console.log(url);
 	
 	axios({
 		url: url,
