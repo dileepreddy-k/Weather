@@ -44,7 +44,7 @@ header .app-flex{
 
 .jumbotron{
 	width: 100%;
-	background: #d2d2d2 url('../images/banner.jpg') no-repeat center;
+	background: #fff url('../images/banner.jpg') no-repeat center;
 	padding: 0 20px;
     position: relative;
 	background-size: cover;
